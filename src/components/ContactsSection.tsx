@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
+import AnimatedSection from "@/components/AnimatedSection";
 
 interface ContactsSectionProps {
   handleBooking: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -20,7 +21,8 @@ const ContactsSection = ({ handleBooking }: ContactsSectionProps) => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card>
+            <AnimatedSection>
+              <Card>
               <CardHeader>
                 <CardTitle>Форма заказа</CardTitle>
                 <CardDescription>Заполните форму, и мы перезвоним</CardDescription>
@@ -37,8 +39,10 @@ const ContactsSection = ({ handleBooking }: ContactsSectionProps) => {
                   </Button>
                 </form>
               </CardContent>
-            </Card>
-            <div className="space-y-6">
+              </Card>
+            </AnimatedSection>
+            <AnimatedSection delay={0.2}>
+              <div className="space-y-6">
               <Card>
                 <CardHeader>
                   <CardTitle>Контактная информация</CardTitle>
@@ -74,7 +78,8 @@ const ContactsSection = ({ handleBooking }: ContactsSectionProps) => {
                   </div>
                 </CardContent>
               </Card>
-            </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </div>

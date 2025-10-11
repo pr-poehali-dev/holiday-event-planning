@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import AnimatedSection from "@/components/AnimatedSection";
 
 interface Character {
   name: string;
@@ -22,7 +23,8 @@ const CharactersSection = ({ characters }: CharactersSectionProps) => {
         </div>
         <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
           {characters.map((character, idx) => (
-            <Card key={idx} className="text-center hover:scale-105 transition-transform">
+            <AnimatedSection key={idx} delay={idx * 0.05}>
+              <Card className="text-center hover:scale-105 transition-transform h-full">
               <CardHeader>
                 <div className="text-6xl mb-2">{character.emoji}</div>
                 <CardTitle className="text-lg">{character.name}</CardTitle>
@@ -30,7 +32,8 @@ const CharactersSection = ({ characters }: CharactersSectionProps) => {
               <CardContent>
                 <p className="text-sm text-muted-foreground">{character.description}</p>
               </CardContent>
-            </Card>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
       </div>

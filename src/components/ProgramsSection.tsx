@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import Icon from "@/components/ui/icon";
+import AnimatedSection from "@/components/AnimatedSection";
 
 interface Program {
   title: string;
@@ -31,7 +32,8 @@ const ProgramsSection = ({ programs, handleBooking }: ProgramsSectionProps) => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {programs.map((program, idx) => (
-            <Card key={idx} className="hover:shadow-xl transition-shadow border-2 hover:border-primary/50">
+            <AnimatedSection key={idx} delay={idx * 0.1}>
+              <Card className="hover:shadow-xl transition-shadow border-2 hover:border-primary/50 h-full">
               <CardHeader>
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-4">
                   <Icon name={program.icon as any} size={32} className="text-white" />
@@ -79,7 +81,8 @@ const ProgramsSection = ({ programs, handleBooking }: ProgramsSectionProps) => {
                   </DialogContent>
                 </Dialog>
               </CardFooter>
-            </Card>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
       </div>

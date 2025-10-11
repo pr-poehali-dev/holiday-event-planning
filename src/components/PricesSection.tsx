@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const PricesSection = () => {
   return (
@@ -11,7 +12,8 @@ const PricesSection = () => {
             Гибкие тарифы для любого бюджета
           </p>
         </div>
-        <Tabs defaultValue="base" className="max-w-4xl mx-auto">
+        <AnimatedSection>
+          <Tabs defaultValue="base" className="max-w-4xl mx-auto">
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="base">Базовые</TabsTrigger>
             <TabsTrigger value="extra">Дополнительно</TabsTrigger>
@@ -106,7 +108,8 @@ const PricesSection = () => {
               </CardContent>
             </Card>
           </TabsContent>
-        </Tabs>
+          </Tabs>
+        </AnimatedSection>
       </div>
     </section>
   );

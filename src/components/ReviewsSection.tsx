@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import AnimatedSection from "@/components/AnimatedSection";
 
 interface Review {
   name: string;
@@ -24,7 +25,8 @@ const ReviewsSection = ({ reviews }: ReviewsSectionProps) => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {reviews.map((review, idx) => (
-            <Card key={idx} className="hover:shadow-lg transition-shadow">
+            <AnimatedSection key={idx} delay={idx * 0.1}>
+              <Card className="hover:shadow-lg transition-shadow h-full">
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <CardTitle className="text-lg">{review.name}</CardTitle>
@@ -39,7 +41,8 @@ const ReviewsSection = ({ reviews }: ReviewsSectionProps) => {
               <CardContent>
                 <p className="text-muted-foreground italic">"{review.text}"</p>
               </CardContent>
-            </Card>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
       </div>

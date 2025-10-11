@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Свяжитесь с нами для заказа Деда Мороза и Снегурочки. Телефон, email, адрес. Работаем ежедневно.">
+    <title>Контакты - Дед Мороз и Снегурочка</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="[[++site_url]]assets/templates/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="sticky-header">
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container">
+                <a class="navbar-brand" href="[[~[[++site_start]]]]">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" alt="Дед Мороз Деткам">
+                    <span class="navbar-brand-text gradient-text">Дед Мороз Деткам!</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" id="mobile-menu-toggle" aria-label="Меню">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="mobile-menu">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="[[~[[++site_start]]]]">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="[[~2]]">Программы</a></li>
+                        <li class="nav-item"><a class="nav-link" href="[[~3]]">Персонажи</a></li>
+                        <li class="nav-item"><a class="nav-link" href="[[~4]]">Цены</a></li>
+                        <li class="nav-item"><a class="nav-link" href="[[~5]]">Галерея</a></li>
+                        <li class="nav-item"><a class="nav-link" href="[[~6]]">Отзывы</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="[[~7]]">Контакты</a></li>
+                    </ul>
+                    <a href="[[~7]]" class="btn btn-primary ms-lg-3">
+                        <i class="bi bi-calendar-event me-2"></i>Забронировать
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-py">
+        <div class="container" style="max-width: 1000px;">
+            <div class="section-header">
+                <h1 class="section-title">Свяжитесь с нами</h1>
+                <p class="section-description">Закажите праздник или задайте вопрос</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h4 mb-3">Форма заказа</h3>
+                            <p class="text-muted mb-4">Заполните форму, и мы перезвоним в течение 15 минут</p>
+                            
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Ваше имя *</label>
+                                    <input type="text" class="form-control" name="name" required placeholder="Иван Петров">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Телефон *</label>
+                                    <input type="tel" class="form-control" name="phone" required placeholder="+7 (999) 123-45-67">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="example@mail.ru">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Дата праздника</label>
+                                    <input type="date" class="form-control" name="date">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Расскажите о вашем празднике</label>
+                                    <textarea class="form-control" name="message" rows="4" placeholder="Возраст ребенка, количество детей, адрес..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="bi bi-send me-2"></i>Отправить заявку
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h4 mb-4">Контактная информация</h3>
+                            
+                            <div class="d-flex gap-3 mb-4">
+                                <div class="contact-icon">
+                                    <i class="bi bi-telephone-fill"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Телефон</h6>
+                                    <a href="tel:+79991234567" class="text-decoration-none">+7 (999) 123-45-67</a>
+                                    <p class="text-muted small mb-0">Звоните с 9:00 до 21:00</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-3 mb-4">
+                                <div class="contact-icon">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Email</h6>
+                                    <a href="mailto:info@magic-events.ru" class="text-decoration-none">info@magic-events.ru</a>
+                                    <p class="text-muted small mb-0">Ответим в течение часа</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-3 mb-4">
+                                <div class="contact-icon">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Адрес</h6>
+                                    <p class="mb-1">Москва, ул. Новогодняя, д. 1</p>
+                                    <p class="text-muted small mb-0">Офис для встреч (по записи)</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-3 mb-4">
+                                <div class="contact-icon">
+                                    <i class="bi bi-clock-fill"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Время работы</h6>
+                                    <p class="mb-1">Ежедневно с 9:00 до 21:00</p>
+                                    <p class="text-muted small mb-0">Выезды с 10:00 до 20:00</p>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <h6 class="mb-3">Мы в мессенджерах</h6>
+                            <div class="d-flex gap-2 mb-4">
+                                <a href="#" class="btn btn-outline-success">
+                                    <i class="bi bi-whatsapp"></i> WhatsApp
+                                </a>
+                                <a href="#" class="btn btn-outline-primary">
+                                    <i class="bi bi-telegram"></i> Telegram
+                                </a>
+                            </div>
+
+                            <h6 class="mb-3">Социальные сети</h6>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="social-link"><i class="bi bi-vk"></i></a>
+                                <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="h5 mb-3"><i class="bi bi-info-circle me-2"></i>Часто задаваемые вопросы</h3>
+                        
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        За какое время нужно бронировать?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Рекомендуем бронировать за 1-2 недели. В пиковые даты (28-31 декабря, 1-8 января) желательно оформить заказ за месяц.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        Как производится оплата?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Оплата производится наличными или переводом после оказания услуги. При бронировании требуется предоплата 30%.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        Можно ли отменить заказ?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Да, отмена бесплатна за 3 и более дней до мероприятия. При отмене менее чем за 3 дня предоплата не возвращается.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                        Выезжаете ли вы в Подмосковье?
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Да, выезжаем в пределах 50 км от МКАД. Дополнительно оплачивается выезд 30 ₽/км в обе стороны.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                        Нужно ли готовить что-то специальное?
+                                    </button>
+                                </h2>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Желательно подготовить место для программы (2-3 метра свободного пространства) и включить новогоднюю музыку. Остальное привезем с собой!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <div class="card bg-gradient-primary text-white shadow-sm">
+                    <div class="card-body p-4 text-center">
+                        <h3 class="h4 mb-3">Готовы заказать праздник?</h3>
+                        <p class="mb-4">Позвоните нам прямо сейчас или оставьте заявку, и мы перезвоним в течение 15 минут!</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <a href="tel:+79991234567" class="btn btn-light btn-lg">
+                                <i class="bi bi-telephone-fill me-2"></i>+7 (999) 123-45-67
+                            </a>
+                            <button class="btn btn-outline-light btn-lg" onclick="document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'})">
+                                <i class="bi bi-envelope-fill me-2"></i>Оставить заявку
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" 
+                             alt="Дед Мороз Деткам" 
+                             style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+                        <span class="h4 mb-0">Дед Мороз Деткам!</span>
+                    </div>
+                    <p class="text-white-50">Создаем незабываемые новогодние праздники для детей с 2019 года</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5 mb-3">Быстрые ссылки</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="[[~2]]">Программы</a></li>
+                        <li class="mb-2"><a href="[[~3]]">Персонажи</a></li>
+                        <li class="mb-2"><a href="[[~4]]">Цены</a></li>
+                        <li class="mb-2"><a href="[[~6]]">Отзывы</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5 mb-3">Мы в соцсетях</h3>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="footer-social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top border-white border-opacity-25 pt-4 text-center text-white-50">
+                <p class="mb-0">© [[++copyright_year:default=`2024`]] [[++site_name]]. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="[[++site_url]]assets/templates/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Познакомьтесь с нашими волшебными персонажами: Дед Мороз, Снегурочка, Снеговик, Эльф и другие.">
+    <title>Персонажи - Дед Мороз и Снегурочка</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="[[++site_url]]assets/templates/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="sticky-header">
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container">
+                <a class="navbar-brand" href="[[~[[++site_start]]]]">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" alt="Дед Мороз Деткам">
+                    <span class="navbar-brand-text gradient-text">Дед Мороз Деткам!</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" id="mobile-menu-toggle" aria-label="Меню">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="mobile-menu">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="[[~[[++site_start]]]]">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="[[~2]]">Программы</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="[[~3]]">Персонажи</a></li>
+                        <li class="nav-item"><a class="nav-link" href="[[~4]]">Цены</a></li>
+                        <li class="nav-item"><a class="nav-link" href="[[~5]]">Галерея</a></li>
+                        <li class="nav-item"><a class="nav-link" href="[[~6]]">Отзывы</a></li>
+                        <li class="nav-item"><a class="nav-link" href="[[~7]]">Контакты</a></li>
+                    </ul>
+                    <a href="[[~7]]" class="btn btn-primary ms-lg-3">
+                        <i class="bi bi-calendar-event me-2"></i>Забронировать
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-py bg-gradient">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Наши персонажи</h1>
+                <p class="section-description">Познакомьтесь с волшебными героями праздника</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <div class="character-card" data-bs-toggle="modal" data-bs-target="#characterModal1">
+                        <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/aaa5f9fb-f044-477a-b4e9-cb60a82faac6.jpg" 
+                             alt="Дед Мороз" 
+                             class="character-image">
+                        <div class="character-content">
+                            <h4 class="character-name">Дед Мороз</h4>
+                            <p class="character-description">Добрый волшебник с мешком подарков</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <div class="character-card" data-bs-toggle="modal" data-bs-target="#characterModal2">
+                        <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/651ae26e-5d23-4f5b-b955-dbe530a002dd.jpg" 
+                             alt="Снегурочка" 
+                             class="character-image">
+                        <div class="character-content">
+                            <h4 class="character-name">Снегурочка</h4>
+                            <p class="character-description">Внучка Деда Мороза</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <div class="character-card" data-bs-toggle="modal" data-bs-target="#characterModal3">
+                        <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/ebab66f3-6d57-40ce-b232-cf178c4806f7.jpg" 
+                             alt="Снеговик" 
+                             class="character-image">
+                        <div class="character-content">
+                            <h4 class="character-name">Снеговик</h4>
+                            <p class="character-description">Веселый друг детей</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <div class="character-card" data-bs-toggle="modal" data-bs-target="#characterModal4">
+                        <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d1307bf6-c1e3-45bc-9bae-192f57bcbbf6.jpg" 
+                             alt="Снежинка" 
+                             class="character-image">
+                        <div class="character-content">
+                            <h4 class="character-name">Снежинка</h4>
+                            <p class="character-description">Волшебная зимняя фея</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <div class="character-card" data-bs-toggle="modal" data-bs-target="#characterModal5">
+                        <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/07c1f68f-a2bd-4000-9b15-10210629e203.jpg" 
+                             alt="Эльф" 
+                             class="character-image">
+                        <div class="character-content">
+                            <h4 class="character-name">Эльф</h4>
+                            <p class="character-description">Проказник и весельчак</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <div class="character-card" data-bs-toggle="modal" data-bs-target="#characterModal6">
+                        <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/e365cbb5-c6db-416f-866c-fd07eadb65fd.jpg" 
+                             alt="Пингвин" 
+                             class="character-image">
+                        <div class="character-content">
+                            <h4 class="character-name">Пингвин</h4>
+                            <p class="character-description">Гость с Северного полюса</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="characterModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Дед Мороз</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-5">
+                            <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/aaa5f9fb-f044-477a-b4e9-cb60a82faac6.jpg" 
+                                 alt="Дед Мороз" 
+                                 class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="lead">Добрый волшебник с мешком подарков</p>
+                            <p>Главный герой новогоднего праздника! Наш Дед Мороз – это профессиональный актёр с богатым опытом работы с детьми. Он создаст настоящую волшебную атмосферу, расскажет сказки, споёт песни и вручит подарки. Дед Мороз умеет находить подход к каждому ребёнку, будь то застенчивый малыш или активный непоседа.</p>
+                            <div class="mt-4">
+                                <h6>Что умеет:</h6>
+                                <ul>
+                                    <li>Поздравляет и дарит подарки</li>
+                                    <li>Проводит хороводы и игры</li>
+                                    <li>Рассказывает новогодние истории</li>
+                                    <li>Загадывает загадки</li>
+                                    <li>Фотографируется с детьми</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="characterModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Снегурочка</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-5">
+                            <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/651ae26e-5d23-4f5b-b955-dbe530a002dd.jpg" 
+                                 alt="Снегурочка" 
+                                 class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="lead">Внучка Деда Мороза, нежная и добрая</p>
+                            <p>Снегурочка – верная помощница Деда Мороза. Она очаровывает детей своей красотой, добротой и весёлым характером. Наша Снегурочка – профессиональная актриса с музыкальным образованием. Она проводит игры, танцует, поёт и помогает создать незабываемую праздничную атмосферу.</p>
+                            <div class="mt-4">
+                                <h6>Что умеет:</h6>
+                                <ul>
+                                    <li>Помогает Деду Морозу</li>
+                                    <li>Проводит конкурсы и викторины</li>
+                                    <li>Учит новогодним песням и танцам</li>
+                                    <li>Делает аквагрим</li>
+                                    <li>Создаёт волшебное настроение</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="characterModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Снеговик</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-5">
+                            <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/ebab66f3-6d57-40ce-b232-cf178c4806f7.jpg" 
+                                 alt="Снеговик" 
+                                 class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="lead">Веселый друг детей, любит играть и шутить</p>
+                            <p>Снеговик – самый забавный персонаж! Он немного неуклюжий, но очень добрый и весёлый. Дети обожают его за простоту и искренность. Снеговик проводит подвижные игры, устраивает соревнования и дарит много смеха и радости.</p>
+                            <div class="mt-4">
+                                <h6>Что умеет:</h6>
+                                <ul>
+                                    <li>Проводит подвижные игры</li>
+                                    <li>Шутит и веселит детей</li>
+                                    <li>Устраивает "снежные" бои</li>
+                                    <li>Танцует смешные танцы</li>
+                                    <li>Помогает другим персонажам</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="characterModal4" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Снежинка</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-5">
+                            <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d1307bf6-c1e3-45bc-9bae-192f57bcbbf6.jpg" 
+                                 alt="Снежинка" 
+                                 class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="lead">Волшебная зимняя фея с искрящимся характером</p>
+                            <p>Снежинка – воздушная и грациозная. Она словно танцует по воздуху, создавая вокруг себя атмосферу волшебства. Снежинка учит детей танцам, проводит творческие мастер-классы и рассказывает о зимних чудесах.</p>
+                            <div class="mt-4">
+                                <h6>Что умеет:</h6>
+                                <ul>
+                                    <li>Учит красивым танцам</li>
+                                    <li>Проводит мастер-классы</li>
+                                    <li>Создаёт зимнюю атмосферу</li>
+                                    <li>Делает украшения из блёсток</li>
+                                    <li>Рассказывает о зимних традициях</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="characterModal5" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Эльф</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-5">
+                            <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/07c1f68f-a2bd-4000-9b15-10210629e203.jpg" 
+                                 alt="Эльф" 
+                                 class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="lead">Проказник и весельчак, помощник Деда Мороза</p>
+                            <p>Эльф – самый энергичный персонаж! Он непоседливый, любознательный и всегда готов к приключениям. Эльф проводит самые весёлые конкурсы, устраивает фокусы и не даёт детям скучать ни минуты.</p>
+                            <div class="mt-4">
+                                <h6>Что умеет:</h6>
+                                <ul>
+                                    <li>Показывает фокусы</li>
+                                    <li>Проводит весёлые эстафеты</li>
+                                    <li>Устраивает квесты</li>
+                                    <li>Создаёт фигурки из шариков</li>
+                                    <li>Дурачится и веселит детей</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="characterModal6" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Пингвин</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-5">
+                            <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/e365cbb5-c6db-416f-866c-fd07eadb65fd.jpg" 
+                                 alt="Пингвин" 
+                                 class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="lead">Гость с Северного полюса, добрый и забавный</p>
+                            <p>Пингвин – необычный гость на празднике! Он приехал с далёкого Севера, чтобы поздравить детей. Пингвин немного неловкий на суше, но очень обаятельный. Он рассказывает истории о жизни на Северном полюсе и устраивает забавные игры.</p>
+                            <div class="mt-4">
+                                <h6>Что умеет:</h6>
+                                <ul>
+                                    <li>Рассказывает о Севере</li>
+                                    <li>Проводит "ледовые" игры</li>
+                                    <li>Учит "пингвиньей" походке</li>
+                                    <li>Показывает фотографии с полюса</li>
+                                    <li>Веселит малышей</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" 
+                             alt="Дед Мороз Деткам" 
+                             style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+                        <span class="h4 mb-0">Дед Мороз Деткам!</span>
+                    </div>
+                    <p class="text-white-50">Создаем незабываемые новогодние праздники для детей с 2019 года</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5 mb-3">Быстрые ссылки</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="[[~2]]">Программы</a></li>
+                        <li class="mb-2"><a href="[[~3]]">Персонажи</a></li>
+                        <li class="mb-2"><a href="[[~4]]">Цены</a></li>
+                        <li class="mb-2"><a href="[[~6]]">Отзывы</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5 mb-3">Мы в соцсетях</h3>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="footer-social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top border-white border-opacity-25 pt-4 text-center text-white-50">
+                <p class="mb-0">© [[++copyright_year:default=`2024`]] [[++site_name]]. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="[[++site_url]]assets/templates/js/main.js"></script>
+</body>
+</html>

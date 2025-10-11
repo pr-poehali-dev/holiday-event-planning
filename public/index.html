@@ -295,6 +295,27 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
 
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 1em;
+            opacity: 0.8;
+            animation: fall linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -10%;
+                opacity: 0.8;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
         .grid {
             display: grid;
             gap: 32px;
@@ -715,6 +736,7 @@
                 </div>
             </div>
         </div>
+        <div id="snowflakes"></div>
     </section>
 
     <section id="programs" style="background: white;">
@@ -1171,6 +1193,26 @@
         document.querySelectorAll('section[id]').forEach(section => {
             observer.observe(section);
         });
+
+        function createSnowflake() {
+            const snowflakesContainer = document.getElementById('snowflakes');
+            if (!snowflakesContainer) return;
+            
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+            
+            snowflakesContainer.appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 200);
     </script>
 </body>
 </html>

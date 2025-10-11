@@ -66,12 +66,12 @@ const Index = () => {
   ];
 
   const characters = [
-    { name: "Дед Мороз", emoji: "🎅", description: "Добрый волшебник с мешком подарков" },
-    { name: "Снегурочка", emoji: "❄️", description: "Внучка Деда Мороза, помощница и красавица" },
-    { name: "Снеговик", emoji: "⛄", description: "Веселый друг, любит играть и танцевать" },
-    { name: "Снежинка", emoji: "✨", description: "Волшебная фея зимнего праздника" },
-    { name: "Эльф", emoji: "🧝", description: "Проказник и весельчак из мастерской" },
-    { name: "Пингвин", emoji: "🐧", description: "Забавный гость с Северного полюса" }
+    { name: "Дед Мороз", image: "https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/a536969e-ce2b-4726-bd5f-5ed714a2facf.jpg", description: "Добрый волшебник с мешком подарков" },
+    { name: "Снегурочка", image: "https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/651ae26e-5d23-4f5b-b955-dbe530a002dd.jpg", description: "Внучка Деда Мороза, помощница и красавица" },
+    { name: "Снеговик", image: "https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/ebab66f3-6d57-40ce-b232-cf178c4806f7.jpg", description: "Веселый друг, любит играть и танцевать" },
+    { name: "Снежинка", image: "https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d1307bf6-c1e3-45bc-9bae-192f57bcbbf6.jpg", description: "Волшебная фея зимнего праздника" },
+    { name: "Эльф", image: "https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/07c1f68f-a2bd-4000-9b15-10210629e203.jpg", description: "Проказник и весельчак из мастерской" },
+    { name: "Пингвин", image: "https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/e365cbb5-c6db-416f-866c-fd07eadb65fd.jpg", description: "Забавный гость с Северного полюса" }
   ];
 
   const reviews = [

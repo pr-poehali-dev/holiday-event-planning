@@ -3,7 +3,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 interface Character {
   name: string;
-  emoji: string;
+  image: string;
   description: string;
 }
 
@@ -24,9 +24,15 @@ const CharactersSection = ({ characters }: CharactersSectionProps) => {
         <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
           {characters.map((character, idx) => (
             <AnimatedSection key={idx} delay={idx * 0.05}>
-              <Card className="text-center hover:scale-105 transition-transform h-full">
-              <CardHeader>
-                <div className="text-6xl mb-2">{character.emoji}</div>
+              <Card className="text-center hover:scale-105 transition-transform h-full overflow-hidden">
+              <CardHeader className="pb-2">
+                <div className="w-full h-32 mb-3 flex items-center justify-center">
+                  <img 
+                    src={character.image} 
+                    alt={character.name} 
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
                 <CardTitle className="text-lg">{character.name}</CardTitle>
               </CardHeader>
               <CardContent>

@@ -9,7 +9,11 @@ const Programs = () => {
   const [activeSection, setActiveSection] = useState("programs");
 
   const scrollToSection = (sectionId: string) => {
-    window.location.href = `/#${sectionId}`;
+    if (sectionId === "home") {
+      window.location.href = "/";
+    } else {
+      window.location.href = `/${sectionId}`;
+    }
   };
 
   const menuItems = [

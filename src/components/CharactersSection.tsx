@@ -26,11 +26,11 @@ const CharactersSection = ({ characters }: CharactersSectionProps) => {
             <AnimatedSection key={idx} delay={idx * 0.05}>
               <Card className="text-center hover:scale-105 transition-transform h-full overflow-hidden">
               <CardHeader className="pb-2">
-                <div className="w-full h-32 mb-3 flex items-center justify-center">
+                <div className="w-full h-32 mb-3 flex items-center justify-center overflow-hidden rounded-lg">
                   <img 
                     src={character.image} 
                     alt={character.name} 
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-full object-cover hover:scale-125 transition-transform duration-300"
                   />
                 </div>
                 <CardTitle className="text-lg">{character.name}</CardTitle>

@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дед Мороз Деткам! - Новогодние праздники для детей</title>
+    <meta name="description" content="Организация новогодних праздников для детей. Дед Мороз, Снегурочка и друзья создадут незабываемую сказку!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #C93836;
+            --accent: #0A5C36;
+            --secondary: #F97316;
+            --gold: #FFA500;
+            --bg-light: #F0F9FF;
+            --text: #1a1a1a;
+            --text-muted: #666;
+            --white: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: linear-gradient(to bottom right, #F0F9FF, #ffffff, #F0FDF4);
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .magical-gradient {
+            background: linear-gradient(90deg, #C93836 0%, #F97316 25%, #FFA500 50%, #0A5C36 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #C93836 0%, #F97316 50%, #FFA500 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: none;
+            list-style: none;
+            gap: 24px;
+        }
+
+        .nav-menu li a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            z-index: 2000;
+            transform: translateX(100%);
+            transition: transform 0.3s;
+        }
+
+        .mobile-menu.active {
+            display: block;
+            transform: translateX(0);
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-items {
+            list-style: none;
+        }
+
+        .mobile-menu-items li {
+            margin-bottom: 8px;
+        }
+
+        .mobile-menu-items li a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: var(--text);
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .mobile-menu-items li a:hover,
+        .mobile-menu-items li a.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b32e2c;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+        }
+
+        #home {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #home::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #C93836 0%, #F97316 50%, #FFA500 100%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            font-size: 0.9rem;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .grid {
+            display: grid;
+            gap: 32px;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-6 {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom right, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .card .duration {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .card-features {
+            list-style: none;
+            margin: 16px 0;
+        }
+
+        .card-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-features li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .card-price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 16px 0;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .character-card {
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .character-card:hover {
+            transform: scale(1.05);
+        }
+
+        .character-emoji {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .tabs {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tabs-header {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .price-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .stars {
+            color: #FFA500;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        footer {
+            background: linear-gradient(to right, var(--primary), var(--accent), var(--secondary));
+            color: white;
+            padding: 48px 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            font-size: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: none;
+            }
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">
+                <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" alt="Дед Мороз Деткам">
+                <span class="logo-text magical-gradient">Дед Мороз Деткам!</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Главная</a></li>
+                <li><a href="#programs" class="nav-link">Программы</a></li>
+                <li><a href="#characters" class="nav-link">Персонажи</a></li>
+                <li><a href="#prices" class="nav-link">Цены</a></li>
+                <li><a href="#gallery" class="nav-link">Галерея</a></li>
+                <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+                <li><a href="#contacts" class="nav-link">Контакты</a></li>
+            </ul>
+            <button class="btn btn-primary" onclick="openModal('booking')">📅 Забронировать</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" alt="Логотип" style="width: 40px; height: 40px; border-radius: 50%;">
+            <span class="magical-gradient" style="font-weight: 700;">Меню</span>
+        </div>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+        <ul class="mobile-menu-items">
+            <li><a href="#home" class="mobile-nav-link" onclick="toggleMobileMenu()">Главная</a></li>
+            <li><a href="#programs" class="mobile-nav-link" onclick="toggleMobileMenu()">Программы</a></li>
+            <li><a href="#characters" class="mobile-nav-link" onclick="toggleMobileMenu()">Персонажи</a></li>
+            <li><a href="#prices" class="mobile-nav-link" onclick="toggleMobileMenu()">Цены</a></li>
+            <li><a href="#gallery" class="mobile-nav-link" onclick="toggleMobileMenu()">Галерея</a></li>
+            <li><a href="#reviews" class="mobile-nav-link" onclick="toggleMobileMenu()">Отзывы</a></li>
+            <li><a href="#contacts" class="mobile-nav-link" onclick="toggleMobileMenu()">Контакты</a></li>
+        </ul>
+        <button class="btn btn-primary" style="width: 100%; margin-top: 24px;" onclick="openModal('booking'); toggleMobileMenu();">📅 Забронировать</button>
+    </div>
+
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Устроим <span class="magical-gradient">волшебный</span> праздник для ваших детей</h1>
+                    <p>Дед Мороз, Снегурочка и их друзья создадут незабываемую новогоднюю сказку прямо у вас дома или в организации</p>
+                    <div class="hero-buttons">
+                        <a href="#programs" class="btn btn-primary">✨ Выбрать программу</a>
+                        <a href="#contacts" class="btn btn-outline">📞 Связаться с нами</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div>🏆 5 лет опыта</div>
+                        <div>❤️ 500+ счастливых детей</div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/63dd95b8-267c-4b77-9923-6fd20b498e9e.jpg" alt="Новогодний праздник">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши программы</h2>
+                <p>Выберите идеальный вариант для вашего праздника</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon">🕐</div>
+                    <h3>Экспресс-поздравление</h3>
+                    <div class="duration">20 минут</div>
+                    <p>Дед Мороз и Снегурочка поздравят ребенка, вручат подарок и создадут волшебную атмосферу</p>
+                    <ul class="card-features">
+                        <li>Поздравление</li>
+                        <li>Вручение подарка</li>
+                        <li>Фото с героями</li>
+                    </ul>
+                    <div class="card-price magical-gradient">2 000 ₽</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="openModal('order', 'Экспресс-поздравление')">Заказать</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✨</div>
+                    <h3>Волшебный час</h3>
+                    <div class="duration">60 минут</div>
+                    <p>Полноценная праздничная программа с играми, конкурсами и новогодним весельем</p>
+                    <ul class="card-features">
+                        <li>Интерактивная программа</li>
+                        <li>Игры и конкурсы</li>
+                        <li>Вручение подарков</li>
+                        <li>Фотосессия</li>
+                    </ul>
+                    <div class="card-price magical-gradient">5 000 ₽</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="openModal('order', 'Волшебный час')">Заказать</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <h3>Корпоративный праздник</h3>
+                    <div class="duration">1-2 часа</div>
+                    <p>Групповое мероприятие для детского сада, школы или организации</p>
+                    <ul class="card-features">
+                        <li>Программа для группы</li>
+                        <li>Новогодние игры</li>
+                        <li>Хороводы</li>
+                        <li>Подарки всем детям</li>
+                    </ul>
+                    <div class="card-price magical-gradient">от 8 000 ₽</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="openModal('order', 'Корпоративный праздник')">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="characters" style="background: linear-gradient(to bottom right, #F0F9FF, #F0FDF4);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши персонажи</h2>
+                <p>Познакомьтесь с волшебными героями праздника</p>
+            </div>
+            <div class="grid grid-6">
+                <div class="card character-card">
+                    <div class="character-emoji">🎅</div>
+                    <h4>Дед Мороз</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Добрый волшебник с мешком подарков</p>
+                </div>
+                <div class="card character-card">
+                    <div class="character-emoji">❄️</div>
+                    <h4>Снегурочка</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Внучка Деда Мороза, помощница и красавица</p>
+                </div>
+                <div class="card character-card">
+                    <div class="character-emoji">⛄</div>
+                    <h4>Снеговик</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Веселый друг, любит играть и танцевать</p>
+                </div>
+                <div class="card character-card">
+                    <div class="character-emoji">✨</div>
+                    <h4>Снежинка</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Волшебная фея зимнего праздника</p>
+                </div>
+                <div class="card character-card">
+                    <div class="character-emoji">🧝</div>
+                    <h4>Эльф</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Проказник и весельчак из мастерской</p>
+                </div>
+                <div class="card character-card">
+                    <div class="character-emoji">🐧</div>
+                    <h4>Пингвин</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Забавный гость с Северного полюса</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prices" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Цены и опции</h2>
+                <p>Гибкие тарифы для любого бюджета</p>
+            </div>
+            <div class="tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" onclick="switchTab('base')">Базовые</button>
+                    <button class="tab-btn" onclick="switchTab('extra')">Дополнительно</button>
+                    <button class="tab-btn" onclick="switchTab('packages')">Пакеты</button>
+                </div>
+                <div id="base" class="tab-content active card">
+                    <h3 style="margin-bottom: 24px;">Базовые программы</h3>
+                    <div class="price-item">
+                        <div>
+                            <strong>Экспресс-поздравление (20 мин)</strong>
+                            <div style="font-size: 0.9rem; color: var(--text-muted);">Дед Мороз + Снегурочка</div>
+                        </div>
+                        <div class="price-value">2 000 ₽</div>
+                    </div>
+                    <div class="price-item">
+                        <div>
+                            <strong>Волшебный час (60 мин)</strong>
+                            <div style="font-size: 0.9rem; color: var(--text-muted);">Полная программа с играми</div>
+                        </div>
+                        <div class="price-value">5 000 ₽</div>
+                    </div>
+                    <div class="price-item">
+                        <div>
+                            <strong>Корпоративный праздник</strong>
+                            <div style="font-size: 0.9rem; color: var(--text-muted);">Для организаций и групп</div>
+                        </div>
+                        <div class="price-value">от 8 000 ₽</div>
+                    </div>
+                </div>
+                <div id="extra" class="tab-content card">
+                    <h3 style="margin-bottom: 24px;">Дополнительные персонажи</h3>
+                    <div class="price-item">
+                        <span>⛄ Снеговик</span>
+                        <span style="font-weight: 600;">+ 1 500 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>✨ Снежинка</span>
+                        <span style="font-weight: 600;">+ 1 500 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>🧝 Эльф</span>
+                        <span style="font-weight: 600;">+ 1 500 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>🐧 Пингвин</span>
+                        <span style="font-weight: 600;">+ 1 500 ₽</span>
+                    </div>
+                </div>
+                <div id="packages" class="tab-content card">
+                    <h3 style="margin-bottom: 24px;">Специальные пакеты</h3>
+                    <div style="padding: 24px; border: 2px solid var(--primary); border-radius: 12px; margin-bottom: 24px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <strong style="font-size: 1.25rem;">VIP Праздник</strong>
+                            <span class="price-value">12 000 ₽</span>
+                        </div>
+                        <ul style="list-style: none; font-size: 0.9rem;">
+                            <li>✓ 2 часа программы</li>
+                            <li>✓ 4 персонажа на выбор</li>
+                            <li>✓ Профессиональная фотосъемка</li>
+                            <li>✓ Подарки для всех детей</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 24px; border: 1px solid var(--border); border-radius: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <strong style="font-size: 1.25rem;">Корпоративный максимум</strong>
+                            <span class="price-value">15 000 ₽</span>
+                        </div>
+                        <ul style="list-style: none; font-size: 0.9rem;">
+                            <li>✓ До 50 детей</li>
+                            <li>✓ 2 часа программы</li>
+                            <li>✓ Все персонажи</li>
+                            <li>✓ Видеосъемка</li>
+                            <li>✓ Новогодние подарки</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" style="background: linear-gradient(to bottom right, #F0FDF4, #F0F9FF);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Галерея праздников</h2>
+                <p>Моменты радости и волшебства</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/63dd95b8-267c-4b77-9923-6fd20b498e9e.jpg" alt="Праздник 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/fbf83355-377c-4761-bd3f-ebe2fc73785b.jpg" alt="Праздник 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/02abca0d-eea8-4fc8-a559-da1d2f928e24.jpg" alt="Праздник 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Отзывы родителей</h2>
+                <p>Что говорят наши клиенты</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="review-card">
+                    <div class="review-header">
+                        <h4>Мария Петрова</h4>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;">15 декабря 2024</p>
+                    <p style="font-style: italic; color: var(--text-muted);">"Невероятно! Дочка была в восторге. Дед Мороз и Снегурочка очень профессиональные, нашли подход к ребенку сразу. Спасибо за сказку!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <h4>Алексей Смирнов</h4>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;">10 декабря 2024</p>
+                    <p style="font-style: italic; color: var(--text-muted);">"Заказывали корпоративный праздник для детского сада. 25 детей были в полном восторге! Организация на высшем уровне."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <h4>Елена Иванова</h4>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;">8 декабря 2024</p>
+                    <p style="font-style: italic; color: var(--text-muted);">"Волшебный час пролетел незаметно. Игры, конкурсы, фотосессия - всё было продумано до мелочей. Рекомендую!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" style="background: linear-gradient(to bottom right, rgba(201,56,54,0.1), rgba(10,92,54,0.1), rgba(249,115,22,0.1));">
+        <div class="container">
+            <div class="section-title">
+                <h2>Свяжитесь с нами</h2>
+                <p>Закажите праздник или задайте вопрос</p>
+            </div>
+            <div class="contact-grid">
+                <div class="card">
+                    <h3 style="margin-bottom: 24px;">Форма заказа</h3>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Телефон *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Расскажите о вашем празднике" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">📤 Отправить заявку</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 24px;">Контактная информация</h3>
+                    <div class="contact-info">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <strong>Телефон</strong>
+                            <div style="color: var(--text-muted);">+7 (999) 123-45-67</div>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <strong>Email</strong>
+                            <div style="color: var(--text-muted);">info@magic-events.ru</div>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Адрес</strong>
+                            <div style="color: var(--text-muted);">Москва, ул. Новогодняя, д. 1</div>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <strong>Время работы</strong>
+                            <div style="color: var(--text-muted);">Ежедневно с 9:00 до 21:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" alt="Дед Мороз Деткам" style="width: 48px; height: 48px; border-radius: 50%;">
+                        <strong style="font-size: 1.25rem;">Дед Мороз Деткам!</strong>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.8);">Создаем незабываемые новогодние праздники для детей с 2019 года</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px;">Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="#programs">Программы</a></li>
+                        <li><a href="#characters">Персонажи</a></li>
+                        <li><a href="#prices">Цены</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px;">Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="VK">🔵</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Дед Мороз Деткам! Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Календарь бронирования</h3>
+                <button class="modal-close" onclick="closeModal('booking')">×</button>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 24px;">Выберите удобную дату для праздника</p>
+            <input type="date" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 16px;">
+            <button class="btn btn-primary" style="width: 100%;" onclick="closeModal('booking')">Подтвердить</button>
+        </div>
+    </div>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="orderTitle">Бронирование</h3>
+                <button class="modal-close" onclick="closeModal('order')">×</button>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 24px;">Заполните форму, и мы свяжемся с вами</p>
+            <form onsubmit="handleOrderSubmit(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя *" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Телефон *" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Комментарий к заказу" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        function switchTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const btns = document.querySelectorAll('.tab-btn');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            btns.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function openModal(modalType, title) {
+            if (modalType === 'booking') {
+                document.getElementById('bookingModal').classList.add('active');
+            } else if (modalType === 'order') {
+                const modal = document.getElementById('orderModal');
+                document.getElementById('orderTitle').textContent = 'Бронирование: ' + title;
+                modal.classList.add('active');
+            }
+        }
+
+        function closeModal(modalType) {
+            if (modalType === 'booking') {
+                document.getElementById('bookingModal').classList.remove('active');
+            } else if (modalType === 'order') {
+                document.getElementById('orderModal').classList.remove('active');
+            }
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Заявка отправлена! 🎄\nМы свяжемся с вами в ближайшее время для подтверждения');
+            e.target.reset();
+        }
+
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+            alert('Заявка отправлена! 🎄\nМы свяжемся с вами в ближайшее время для подтверждения');
+            closeModal('order');
+            e.target.reset();
+        }
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

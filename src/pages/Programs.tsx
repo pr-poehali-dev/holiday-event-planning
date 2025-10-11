@@ -69,6 +69,81 @@ const Programs = () => {
         menuItems={menuItems} 
       />
       <div className="pt-20">
+        <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10">
+          <div className="container">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <h1 className="text-5xl font-bold">Новогодние программы для детей</h1>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Мы создаем незабываемые праздники для детей с 2019 года. Каждая программа тщательно продумана 
+                и адаптирована под возраст ребенка. Наши артисты — профессионалы с актерским образованием 
+                и огромной любовью к детям.
+              </p>
+              <div className="grid md:grid-cols-2 gap-8 mt-12 text-left">
+                <div className="bg-white p-6 rounded-xl shadow-lg">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/63dd95b8-267c-4b77-9923-6fd20b498e9e.jpg"
+                    alt="Детский праздник"
+                    className="w-full h-48 object-cover rounded-lg mb-4"
+                  />
+                  <h3 className="text-xl font-bold mb-2">🎭 Профессиональные актеры</h3>
+                  <p className="text-muted-foreground">
+                    Все наши артисты имеют актерское образование и многолетний опыт работы с детьми. 
+                    Они умеют найти подход к каждому ребенку и создать атмосферу настоящего волшебства.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/fbf83355-377c-4761-bd3f-ebe2fc73785b.jpg"
+                    alt="Игры на празднике"
+                    className="w-full h-48 object-cover rounded-lg mb-4"
+                  />
+                  <h3 className="text-xl font-bold mb-2">🎮 Интерактивные программы</h3>
+                  <p className="text-muted-foreground">
+                    Мы не просто показываем представление — мы вовлекаем детей в игру! 
+                    Конкурсы, загадки, танцы и волшебные превращения — каждый ребенок становится участником сказки.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/02abca0d-eea8-4fc8-a559-da1d2f928e24.jpg"
+                    alt="Фотосессия с героями"
+                    className="w-full h-48 object-cover rounded-lg mb-4"
+                  />
+                  <h3 className="text-xl font-bold mb-2">📸 Яркие воспоминания</h3>
+                  <p className="text-muted-foreground">
+                    После праздника у вас останутся не только подарки, но и множество фотографий! 
+                    Профессиональная фотосессия с любимыми героями входит в программу.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg">
+                  <h3 className="text-xl font-bold mb-2">🎁 Индивидуальный подход</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Мы учитываем возраст, интересы и особенности каждого ребенка. 
+                    Можем адаптировать программу под ваши пожелания и добавить любимых персонажей.
+                  </p>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-center gap-2">
+                      <span className="text-accent">✓</span>
+                      <span>Возраст 2-12 лет</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-accent">✓</span>
+                      <span>Выезд по всей Москве</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-accent">✓</span>
+                      <span>Работаем без выходных</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-accent">✓</span>
+                      <span>Гарантия качества</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <ProgramsSection programs={programs} handleBooking={handleBooking} />
       </div>
       <Footer scrollToSection={scrollToSection} />

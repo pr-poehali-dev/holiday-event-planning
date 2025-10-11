@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Calendar } from "@/components/ui/calendar";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import Icon from "@/components/ui/icon";
 import { useToast } from "@/hooks/use-toast";
 
@@ -13,12 +14,24 @@ const Index = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const { toast } = useToast();
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
+    setMobileMenuOpen(false);
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const menuItems = [
+    { id: "home", label: "Главная", icon: "Home" },
+    { id: "programs", label: "Программы", icon: "Calendar" },
+    { id: "characters", label: "Персонажи", icon: "Users" },
+    { id: "prices", label: "Цены", icon: "DollarSign" },
+    { id: "gallery", label: "Галерея", icon: "Image" },
+    { id: "reviews", label: "Отзывы", icon: "Star" },
+    { id: "contacts", label: "Контакты", icon: "Phone" }
+  ];
 
   const handleBooking = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -99,16 +112,9 @@ const Index = () => {
             <span className="text-3xl">🎄</span>
             <span className="text-xl font-bold magical-gradient bg-clip-text text-transparent">Волшебные Праздники</span>
           </div>
+          
           <div className="hidden md:flex items-center gap-6">
-            {[
-              { id: "home", label: "Главная", icon: "Home" },
-              { id: "programs", label: "Программы", icon: "Calendar" },
-              { id: "characters", label: "Персонажи", icon: "Users" },
-              { id: "prices", label: "Цены", icon: "DollarSign" },
-              { id: "gallery", label: "Галерея", icon: "Image" },
-              { id: "reviews", label: "Отзывы", icon: "Star" },
-              { id: "contacts", label: "Контакты", icon: "Phone" }
-            ].map((item) => (
+            {menuItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -121,21 +127,71 @@ const Index = () => {
               </button>
             ))}
           </div>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <Icon name="Calendar" size={16} className="mr-2" />
-                Забронировать
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Календарь бронирования</DialogTitle>
-                <DialogDescription>Выберите удобную дату для праздника</DialogDescription>
-              </DialogHeader>
-              <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />
-            </DialogContent>
-          </Dialog>
+
+          <div className="flex items-center gap-2">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="hidden md:flex bg-primary text-primary-foreground hover:bg-primary/90">
+                  <Icon name="Calendar" size={16} className="mr-2" />
+                  Забронировать
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Календарь бронирования</DialogTitle>
+                  <DialogDescription>Выберите удобную дату для праздника</DialogDescription>
+                </DialogHeader>
+                <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />
+              </DialogContent>
+            </Dialog>
+
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Icon name="Menu" size={24} />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+                <SheetHeader>
+                  <SheetTitle className="flex items-center gap-2">
+                    <span className="text-2xl">🎄</span>
+                    <span className="magical-gradient bg-clip-text text-transparent">Меню</span>
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="mt-8 space-y-2">
+                  {menuItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                        activeSection === item.id
+                          ? "bg-primary text-primary-foreground"
+                          : "hover:bg-accent"
+                      }`}
+                    >
+                      <Icon name={item.icon as any} size={20} />
+                      <span className="font-medium">{item.label}</span>
+                    </button>
+                  ))}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button className="w-full mt-4 bg-primary hover:bg-primary/90">
+                        <Icon name="Calendar" size={20} className="mr-2" />
+                        Забронировать
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Календарь бронирования</DialogTitle>
+                        <DialogDescription>Выберите удобную дату для праздника</DialogDescription>
+                      </DialogHeader>
+                      <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />
+                    </DialogContent>
+                  </Dialog>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </nav>
       </header>
 

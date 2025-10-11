@@ -68,7 +68,7 @@ const Index = () => {
   const characters = [
     { 
       name: "Дед Мороз", 
-      image: "https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/a536969e-ce2b-4726-bd5f-5ed714a2facf.jpg", 
+      image: "https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/aaa5f9fb-f044-477a-b4e9-cb60a82faac6.jpg", 
       description: "Добрый волшебник с мешком подарков",
       fullDescription: "Главный волшебник Нового года! Дед Мороз приносит детям подарки, рассказывает зимние сказки и создает настоящее новогоднее чудо. С длинной белой бородой, посохом и большим мешком подарков он дарит радость и исполняет заветные желания."
     },

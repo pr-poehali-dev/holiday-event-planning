@@ -236,14 +236,17 @@
         #home {
             position: relative;
             overflow: hidden;
+            background-image: url('https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/3847f88a-2d0b-49b9-8b0f-e93f4110da25.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         #home::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, #C93836 0%, #F97316 50%, #FFA500 100%);
-            opacity: 0.1;
+            background: linear-gradient(135deg, rgba(201, 56, 54, 0.85) 0%, rgba(249, 115, 22, 0.75) 50%, rgba(255, 165, 0, 0.85) 100%);
             z-index: 0;
         }
 
@@ -260,12 +263,15 @@
             font-size: 3rem;
             line-height: 1.2;
             margin-bottom: 24px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .hero-text p {
             font-size: 1.25rem;
-            color: var(--text-muted);
+            color: rgba(255, 255, 255, 0.95);
             margin-bottom: 32px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero-buttons {
@@ -279,6 +285,8 @@
             display: flex;
             gap: 32px;
             font-size: 0.9rem;
+            color: white;
+            font-weight: 600;
         }
 
         .hero-image img {

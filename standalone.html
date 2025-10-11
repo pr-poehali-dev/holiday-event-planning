@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дед Мороз Деткам - Волшебные Праздники</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #dcfce7 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ef4444, #3b82f6, #10b981);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .hero {
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #ef4444, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #ef4444;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: white;
+            color: #ef4444;
+            border: 2px solid #ef4444;
+        }
+
+        .btn-outline:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #666;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ef4444, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card .price {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ef4444, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 20px 0;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .character-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .character-card:hover {
+            transform: scale(1.05);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .character-card:hover .character-image {
+            transform: scale(1.25);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            color: #fbbf24;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(59,130,246,0.1), rgba(16,185,129,0.1));
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-info {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #ef4444, #3b82f6, #10b981);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1001;
+        }
+
+        .toast.show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" alt="Дед Мороз Деткам">
+                    <span>Дед Мороз Деткам!</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#programs">Программы</a></li>
+                        <li><a href="#characters">Персонажи</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div>
+                    <h1>Устроим <span class="gradient-text">волшебный</span> праздник для ваших детей</h1>
+                    <p>Дед Мороз, Снегурочка и их друзья создадут незабываемую новогоднюю сказку</p>
+                    <div class="btn-group">
+                        <a href="#programs" class="btn btn-primary">✨ Выбрать программу</a>
+                        <a href="#contacts" class="btn btn-outline">📞 Связаться</a>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span>🏆</span>
+                            <span>5 лет опыта</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>❤️</span>
+                            <span>500+ счастливых детей</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/63dd95b8-267c-4b77-9923-6fd20b498e9e.jpg" alt="Праздник">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши программы</h2>
+                <p>Выберите идеальный вариант</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">⏰</div>
+                    <h3>Экспресс-поздравление</h3>
+                    <p style="color: #ef4444; font-weight: bold;">20 минут</p>
+                    <p>Дед Мороз и Снегурочка поздравят ребенка</p>
+                    <ul class="features-list">
+                        <li>Поздравление</li>
+                        <li>Вручение подарка</li>
+                        <li>Фото с героями</li>
+                    </ul>
+                    <div class="price">2 000 ₽</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="openBooking('Экспресс')">Заказать</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✨</div>
+                    <h3>Волшебный час</h3>
+                    <p style="color: #ef4444; font-weight: bold;">60 минут</p>
+                    <p>Полная программа с играми</p>
+                    <ul class="features-list">
+                        <li>Интерактив</li>
+                        <li>Игры и конкурсы</li>
+                        <li>Подарки</li>
+                        <li>Фотосессия</li>
+                    </ul>
+                    <div class="price">5 000 ₽</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="openBooking('Час')">Заказать</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <h3>Корпоративный</h3>
+                    <p style="color: #ef4444; font-weight: bold;">1-2 часа</p>
+                    <p>Для детского сада, школы</p>
+                    <ul class="features-list">
+                        <li>Для группы</li>
+                        <li>Новогодние игры</li>
+                        <li>Хороводы</li>
+                        <li>Подарки всем</li>
+                    </ul>
+                    <div class="price">от 8 000 ₽</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="openBooking('Корпоратив')">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="characters" style="background: linear-gradient(135deg, #e0f2fe, #dcfce7);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши персонажи</h2>
+                <p>Волшебные герои праздника</p>
+            </div>
+            <div class="characters-grid">
+                <div class="character-card" onclick="showCharacter('Дед Мороз', 'https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/aaa5f9fb-f044-477a-b4e9-cb60a82faac6.jpg', 'Главный волшебник Нового года! Приносит детям подарки и создает новогоднее чудо.')">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/aaa5f9fb-f044-477a-b4e9-cb60a82faac6.jpg" class="character-image" alt="Дед Мороз">
+                    <h3>Дед Мороз</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Добрый волшебник</p>
+                </div>
+                <div class="character-card" onclick="showCharacter('Снегурочка', 'https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/651ae26e-5d23-4f5b-b955-dbe530a002dd.jpg', 'Внучка Деда Мороза в голубой шубке. Водит хороводы и поет новогодние песни.')">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/651ae26e-5d23-4f5b-b955-dbe530a002dd.jpg" class="character-image" alt="Снегурочка">
+                    <h3>Снегурочка</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Помощница и красавица</p>
+                </div>
+                <div class="character-card" onclick="showCharacter('Снеговик', 'https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/ebab66f3-6d57-40ce-b232-cf178c4806f7.jpg', 'Забавный друг с морковкой! Обожает играть в снежки и устраивать танцы.')">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/ebab66f3-6d57-40ce-b232-cf178c4806f7.jpg" class="character-image" alt="Снеговик">
+                    <h3>Снеговик</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Веселый друг</p>
+                </div>
+                <div class="character-card" onclick="showCharacter('Снежинка', 'https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d1307bf6-c1e3-45bc-9bae-192f57bcbbf6.jpg', 'Фея зимы в белоснежном наряде. Создает волшебство и превращает день в сказку.')">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d1307bf6-c1e3-45bc-9bae-192f57bcbbf6.jpg" class="character-image" alt="Снежинка">
+                    <h3>Снежинка</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Волшебная фея</p>
+                </div>
+                <div class="character-card" onclick="showCharacter('Эльф', 'https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/07c1f68f-a2bd-4000-9b15-10210629e203.jpg', 'Помощник из мастерской! Помогает делать игрушки и упаковывать подарки.')">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/07c1f68f-a2bd-4000-9b15-10210629e203.jpg" class="character-image" alt="Эльф">
+                    <h3>Эльф</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Веселый проказник</p>
+                </div>
+                <div class="character-card" onclick="showCharacter('Пингвин', 'https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/e365cbb5-c6db-416f-866c-fd07eadb65fd.jpg', 'Гость с Северного полюса! Любит танцевать и рассказывать истории.')">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/e365cbb5-c6db-416f-866c-fd07eadb65fd.jpg" class="character-image" alt="Пингвин">
+                    <h3>Пингвин</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Забавный гость</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" style="background: linear-gradient(135deg, #dcfce7, #e0f2fe);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Галерея праздников</h2>
+                <p>Моменты радости</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/63dd95b8-267c-4b77-9923-6fd20b498e9e.jpg" alt="Праздник">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/fbf83355-377c-4761-bd3f-ebe2fc73785b.jpg" alt="Праздник">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/02abca0d-eea8-4fc8-a559-da1d2f928e24.jpg" alt="Праздник">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Отзывы родителей</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <h3>Мария Петрова</h3>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="review-text">"Дочка была в восторге! Очень профессионально!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <h3>Алексей Смирнов</h3>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="review-text">"25 детей были в восторге! Высший уровень!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <h3>Елена Иванова</h3>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="review-text">"Всё продумано до мелочей. Рекомендую!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Свяжитесь с нами</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="card">
+                    <h3>Форма заказа</h3>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <input type="text" placeholder="Имя *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Телефон *" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Комментарий"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Контакты</h3>
+                    <div class="contact-item">
+                        <span style="font-size: 1.5rem;">📞</span>
+                        <div>
+                            <p style="font-weight: 600;">Телефон</p>
+                            <p>+7 (999) 123-45-67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span style="font-size: 1.5rem;">✉️</span>
+                        <div>
+                            <p style="font-weight: 600;">Email</p>
+                            <p>info@magic-events.ru</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>© 2024 Волшебные Праздники</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">×</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <p id="modalText" style="line-height: 1.8;"></p>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">
+        <strong>Заявка отправлена! 🎄</strong>
+        <p>Мы свяжемся с вами</p>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+            });
+        });
+
+        function showCharacter(name, img, desc) {
+            document.getElementById('modalTitle').textContent = name;
+            document.getElementById('modalImage').src = img;
+            document.getElementById('modalText').textContent = desc;
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function openBooking(prog) {
+            alert('Бронирование: ' + prog + '\nПозвоните: +7 (999) 123-45-67');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('toast').classList.add('show');
+            setTimeout(() => document.getElementById('toast').classList.remove('show'), 3000);
+            e.target.reset();
+        }
+
+        window.onclick = e => {
+            if (e.target.id === 'modal') closeModal();
+        };
+    </script>
+</body>
+</html>

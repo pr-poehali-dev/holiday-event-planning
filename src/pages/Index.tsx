@@ -108,9 +108,13 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <nav className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-3xl">🎄</span>
-            <span className="text-xl font-bold magical-gradient bg-clip-text text-transparent">Волшебные Праздники</span>
+          <div className="flex items-center gap-3">
+            <img 
+              src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" 
+              alt="Дед Мороз Деткам" 
+              className="h-12 w-12 rounded-full object-cover"
+            />
+            <span className="text-xl font-bold magical-gradient bg-clip-text text-transparent">Дед Мороз Деткам!</span>
           </div>
           
           <div className="hidden md:flex items-center gap-6">
@@ -154,7 +158,11 @@ const Index = () => {
               <SheetContent side="right" className="w-[280px] sm:w-[320px]">
                 <SheetHeader>
                   <SheetTitle className="flex items-center gap-2">
-                    <span className="text-2xl">🎄</span>
+                    <img 
+                      src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" 
+                      alt="Логотип" 
+                      className="h-10 w-10 rounded-full object-cover"
+                    />
                     <span className="magical-gradient bg-clip-text text-transparent">Меню</span>
                   </SheetTitle>
                 </SheetHeader>
@@ -558,9 +566,13 @@ const Index = () => {
         <div className="container">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-3xl">🎄</span>
-                <span className="text-xl font-bold">Волшебные Праздники</span>
+              <div className="flex items-center gap-3 mb-4">
+                <img 
+                  src="https://cdn.poehali.dev/projects/b4288ae9-5860-48b0-a635-c6eefd31df1d/files/d4ea635a-e57e-43f8-ba39-0674adfca256.jpg" 
+                  alt="Дед Мороз Деткам" 
+                  className="h-12 w-12 rounded-full object-cover"
+                />
+                <span className="text-xl font-bold">Дед Мороз Деткам!</span>
               </div>
               <p className="text-white/80">
                 Создаем незабываемые новогодние праздники для детей с 2019 года

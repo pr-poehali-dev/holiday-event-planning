@@ -204,7 +204,7 @@ const Index = () => {
       </header>
 
       <section id="home" className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 hero-gradient opacity-10 bg-slate-900" />
+        <div className="absolute inset-0 hero-gradient opacity-10" />
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
